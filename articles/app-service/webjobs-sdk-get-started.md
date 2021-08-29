@@ -199,15 +199,11 @@ Starting with version 3 of the WebJobs SDK, to connect to Azure Storage services
         builder.ConfigureWebJobs(b =>
         {
             b.AddAzureStorageCoreServices();
+            b.AddAzureStorage();
         });
         builder.ConfigureLogging((context, b) =>
         {
             b.AddConsole();
-        });
-        builder.ConfigureWebJobs(b =>
-        {
-            b.AddAzureStorageCoreServices();
-            b.AddAzureStorage();
         });
         var host = builder.Build();
         using (host)
